@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class ClockIn {
 private SQLiteDatabase database;
@@ -41,6 +42,19 @@ private Clock cursorToClock(Cursor cursor){
 	return clock;
 	
 }
+
+
+//public void addJob(int catId, String title, float lat, float lon){
+//	String sql = String.format(
+//		"INSERT INTO locations (_id,category_id, title, lat, lon) " +
+//		"VALUES (NULL,%d,'%s', %f, %f);",
+//		catId,title, lat, lon);
+//	try{
+//		getWritableDatabase().execSQL(sql);
+//	} catch (SQLException e) {
+//        Log.e("Error writing new location", e.toString());
+//	}
+//}
 
 }
 
