@@ -38,7 +38,7 @@ public Clock clockIn(int clockIn){
 	
 }
 private Clock cursorToClock(Cursor cursor){
-	Clock clock=new Clock(cursor.getLong(0), cursor.getInt(1), cursor.getInt(2));
+	Clock clock=new Clock();
 	return clock;
 	
 }

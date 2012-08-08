@@ -14,8 +14,8 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:contentDescription="Logo"
-        android:paddingBottom="50px"
-        android:paddingTop="50px"
+        android:paddingBottom="50dp"
+        android:paddingTop="50dp"
         android:scaleType="matrix"
         android:src="@drawable/logo" />
 
@@ -26,6 +26,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="103dp"
-        android:src="@drawable/start" />
+        android:src="@drawable/start"
+        android:background="@null"
+         android:contentDescription="Start Button"
+         />
 
 </RelativeLayout>
