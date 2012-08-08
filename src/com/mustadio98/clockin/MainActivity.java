@@ -1,9 +1,6 @@
 package com.mustadio98.clockin;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+
 
 import com.mustadio98.clockin.database.Clock;
 
@@ -12,11 +9,10 @@ import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.text.format.Time;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,9 +45,7 @@ public class MainActivity extends Activity {
         return true;
     }
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-    	DateFormat dateFormat=new SimpleDateFormat("HH:mm:ss");
-    	
+    public boolean onOptionsItemSelected(MenuItem item) {       	
     	Intent i;
     	switch(item.getItemId()){  	
     	case android.R.id.home:
@@ -60,14 +54,16 @@ public class MainActivity extends Activity {
         	startActivity(i);
     		return true;
     	case R.id.clock_in:
-    		if(clock.getClockIn()==null){  			
-    		Date calendar=new Date();
-    		String time=dateFormat.format(calendar);
-    		clock.setClockIn(calendar);
+    		if(clock.getClockIn()==null){  
+    		
+    		Time calendar=new Time();
+    		calendar.setToNow();
+    		String Time= calendar.hour+":"+calendar.minute;   		    		
+    		clock.setClockIn(Time);
     		if(clock.getClockOut()!=null){
     			clock.setClockOut(null);
     		}
-    		startText.setText(time);
+    		startText.setText(Time);
     		}
     		else{
     			Toast a=Toast.makeText(getApplicationContext(), "You already clocked in", Toast.LENGTH_SHORT);
@@ -82,15 +78,16 @@ public class MainActivity extends Activity {
     		return true;
     	case R.id.clockout:
     		if(clock.getClockOut()==null && clock.getClockIn()!=null){
-    			Date calendar=new Date();
-    			String time=dateFormat.format(calendar);
-    			clock.setClockOut(calendar);
+    			Time calendar=new Time();
+    			calendar.setToNow();
+        		String Time= calendar.hour+":"+calendar.minute;   	
+    			clock.setClockOut(Time);
     			if(clock.getClockIn()!=null){
     				clock.setClockIn(null);
     			}
-    			endText.setText(time);
-//    			startText.setText(null);
-//    			endText.setText(null);
+    			endText.setText(Time);
+    			startText.setText(null);
+    			endText.setText(null);
 //    			total.setText(String.valueOf(clock.getTotalTime()));
     		}
     		else if(clock.getClockOut()==null && clock.getClockOut()==null){
