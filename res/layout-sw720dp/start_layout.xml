@@ -18,7 +18,7 @@
         android:paddingTop="50dp"
         android:scaleType="matrix"
         android:src="@drawable/logo2" />
-
+
     <ImageButton
         android:id="@+id/startBtn"
         android:layout_width="wrap_content"
@@ -26,9 +26,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="103dp"
-        android:src="@drawable/start"
         android:background="@null"
-         android:contentDescription="Start Button"
-         />
+        android:contentDescription="Start Button"
+        android:src="@drawable/start2" />
 
 </RelativeLayout>
