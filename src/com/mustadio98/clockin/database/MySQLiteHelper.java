@@ -26,8 +26,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	}
 	@Override
 	public void onCreate(SQLiteDatabase database) {
-		database.execSQL("CREATE TABLE clockin(clockInID integer primary key autoincrement, clockinTime integer not null, clockoutTime integer);");
-		database.execSQL("Create TABLE break(breakID integer primary key autoincrement, breakOutTime integer not null, breakInTime integer, clockinID integer not null, FOREIGN KEY(clockinID) references clockin(clockinID);");
+		database.execSQL("CREATE TABLE clockin(clockInID integer primary key autoincrement, clockinTime DATETIME not null, clockoutTime DATETIME);");
+		database.execSQL("Create TABLE break(breakID integer primary key autoincrement, breakOutTime DATETIME not null, breakInTime DATETIME, clockinID integer not null, FOREIGN KEY(clockinID) references clockin(clockinID);");
 
 	}
 

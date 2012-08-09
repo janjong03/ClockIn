@@ -2,6 +2,12 @@ package com.mustadio98.clockin;
 
 
 
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import com.mustadio98.clockin.database.Clock;
 
 import android.net.Uri;
@@ -9,7 +15,6 @@ import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.text.format.Time;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -55,11 +60,10 @@ public class MainActivity extends Activity {
     		return true;
     	case R.id.clock_in:
     		if(clock.getClockIn()==null){  
-    		
-    		Time calendar=new Time();
-    		calendar.setToNow();
-    		String Time= calendar.hour+":"+calendar.minute;   		    		
-    		clock.setClockIn(Time);
+    	    DateFormat dateFormat=new SimpleDateFormat("HH:mm:ss");
+    	    Calendar date = Calendar.getInstance();
+    		String Time= dateFormat.format(date.getTime());		    		
+    	    clock.setClockIn(date.getTime());
     		if(clock.getClockOut()!=null){
     			clock.setClockOut(null);
     		}
@@ -78,22 +82,28 @@ public class MainActivity extends Activity {
     		return true;
     	case R.id.clockout:
     		if(clock.getClockOut()==null && clock.getClockIn()!=null){
-    			Time calendar=new Time();
-    			calendar.setToNow();
-        		String Time= calendar.hour+":"+calendar.minute;   	
-    			clock.setClockOut(Time);
+    		    DateFormat dateFormat=new SimpleDateFormat("HH:mm:ss");
+        	    Calendar date = Calendar.getInstance();
+        		String Time= dateFormat.format(date.getTime());
+        		clock.setClockOut(date.getTime());
+
+    			endText.setText(Time);
+//    			startText.setText(null);
+//    			endText.setText(null);
+    			double totalhours=clock.getTotalTime(clock.getClockOut(),clock.getClockIn());
+    			double hourdiff= totalhours / (60*60*1000);
+			    total.setText(String.valueOf(hourdiff)+" hours");
+//    			total.setText(clock.getClockOut()+" - "+clock.getClockIn());
     			if(clock.getClockIn()!=null){
     				clock.setClockIn(null);
     			}
-    			endText.setText(Time);
-    			startText.setText(null);
-    			endText.setText(null);
-//    			total.setText(String.valueOf(clock.getTotalTime()));
+
     		}
-    		else if(clock.getClockOut()==null && clock.getClockOut()==null){
+    		else if(clock.getClockOut()==null && clock.getClockIn()==null){
     			Toast b=Toast.makeText(getApplicationContext(), "Please Clock In First", Toast.LENGTH_SHORT);
         		b.show();
     		}
+    		
     		else{
     			Toast b=Toast.makeText(getApplicationContext(), "You already clocked out", Toast.LENGTH_SHORT);
     			b.show();
