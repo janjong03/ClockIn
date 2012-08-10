@@ -59,13 +59,13 @@ public class MainActivity extends Activity {
         	startActivity(i);
     		return true;
     	case R.id.clock_in:
-    		if(clock.getClockIn()==null){  
+    		if(clock.getClockIn()==0){  
     	    DateFormat dateFormat=new SimpleDateFormat("HH:mm:ss");
     	    Calendar date = Calendar.getInstance();
     		String Time= dateFormat.format(date.getTime());		    		
-    	    clock.setClockIn(date.getTime());
-    		if(clock.getClockOut()!=null){
-    			clock.setClockOut(null);
+    	    clock.setClockIn(date.getTimeInMillis());
+    		if(clock.getClockOut()!=0){
+    			clock.setClockOut(0);
     		}
     		startText.setText(Time);
     		}
@@ -81,25 +81,25 @@ public class MainActivity extends Activity {
     		a.show();
     		return true;
     	case R.id.clockout:
-    		if(clock.getClockOut()==null && clock.getClockIn()!=null){
+    		if(clock.getClockOut()==0 && clock.getClockIn()!=0){
     		    DateFormat dateFormat=new SimpleDateFormat("HH:mm:ss");
         	    Calendar date = Calendar.getInstance();
         		String Time= dateFormat.format(date.getTime());
-        		clock.setClockOut(date.getTime());
+        		clock.setClockOut(date.getTimeInMillis());
 
     			endText.setText(Time);
 //    			startText.setText(null);
 //    			endText.setText(null);
-    			double totalhours=clock.getTotalTime(clock.getClockOut(),clock.getClockIn());
+    			double totalhours=clock.getTotalTime();
     			double hourdiff= totalhours / (60*60*1000);
 			    total.setText(String.valueOf(hourdiff)+" hours");
 //    			total.setText(clock.getClockOut()+" - "+clock.getClockIn());
-    			if(clock.getClockIn()!=null){
-    				clock.setClockIn(null);
+    			if(clock.getClockIn()!=0){
+    				clock.setClockIn(0);
     			}
 
     		}
-    		else if(clock.getClockOut()==null && clock.getClockIn()==null){
+    		else if(clock.getClockOut()==0 && clock.getClockIn()==0){
     			Toast b=Toast.makeText(getApplicationContext(), "Please Clock In First", Toast.LENGTH_SHORT);
         		b.show();
     		}

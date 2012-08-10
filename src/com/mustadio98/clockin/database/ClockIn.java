@@ -1,5 +1,7 @@
 package com.mustadio98.clockin.database;
 
+import java.util.Date;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -26,23 +28,40 @@ public void close(){
 	mySQLiteHelper.close();
 }
 
-public Clock clockIn(int clockIn){
-	ContentValues contentValues=new ContentValues();
-	contentValues.put(MySQLiteHelper.CLOCKIN_TIME, clockIn);
-	long insertId=database.insert(MySQLiteHelper.CLOCKIN_NAME, null, contentValues);
-	Cursor cursor=database.query(MySQLiteHelper.CLOCKIN_ID, allColumnsClock, MySQLiteHelper.CLOCKIN_ID + "=" + insertId, null, null, null, null);
-	cursor.moveToFirst();
-	Clock clock= cursorToClock(cursor);
-	cursor.close();
-	return clock;
-	
+//public Clock clockIn(int clockIn){
+//	ContentValues contentValues=new ContentValues();
+//	contentValues.put(MySQLiteHelper.CLOCKIN_TIME, clockIn);
+//	long insertId=database.insert(MySQLiteHelper.CLOCKIN_NAME, null, contentValues);
+//	Cursor cursor=database.query(MySQLiteHelper.CLOCKIN_ID, allColumnsClock, MySQLiteHelper.CLOCKIN_ID + "=" + insertId, null, null, null, null);
+//	cursor.moveToFirst();
+//	Clock clock= cursorToClock(cursor);
+//	cursor.close();
+//	return clock;
+//	
+//}
+//private Clock cursorToClock(Cursor cursor){
+//	Clock clock=new Clock();
+//	return clock;
+//	
+//}
+public void clockIn(String clockInDate, Date clockinTime){
+	String sql=String.format("INSERT INTO clockin (clockInDate, clockinTime) values" +
+			"(%s,%d);",clockInDate,clockinTime);
+	try{
+		database.execSQL(sql);
+	}catch(SQLException e){
+		Log.e("Db Error", e.toString());
+	}
 }
-private Clock cursorToClock(Cursor cursor){
-	Clock clock=new Clock();
-	return clock;
-	
+public void clockOut(Date clockoutTime){
+	String sql=String.format("INSERT INTO clockin (clockinTime) values" +
+			"(%d);",clockoutTime);
+	try{
+		database.execSQL(sql);
+	}catch(SQLException e){
+		Log.e("Db Error", e.toString());
+	}
 }
-
 
 //public void addJob(int catId, String title, float lat, float lon){
 //	String sql = String.format(

@@ -1,17 +1,22 @@
 package com.mustadio98.clockin.database;
 
 public class Break {
-	public Break(long breakId, int breakOut, int breakIn, int clockId) {
+
+	public Break() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Break(long breakId, int breakOut, int breakIn, String clockInDate) {
 		super();
 		this.breakId = breakId;
 		this.breakOut = breakOut;
 		this.breakIn = breakIn;
-		this.clockId = clockId;
+		this.clockInDate = clockInDate;
 	}
 	private long breakId;
 	private int breakOut;
 	private int breakIn;
-	private int clockId;
+	private String clockInDate;
 	public long getBreakId() {
 		return breakId;
 	}
@@ -30,11 +35,11 @@ public class Break {
 	public void setBreakIn(int breakIn) {
 		this.breakIn = breakIn;
 	}
-	public int getClockId() {
-		return clockId;
+	public String getClockInDate() {
+		return clockInDate;
 	}
-	public void setClockId(int clockId) {
-		this.clockId = clockId;
+	public void setClockInDate(String clockInDate) {
+		this.clockInDate = clockInDate;
 	}
 
 }

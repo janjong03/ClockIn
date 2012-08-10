@@ -1,53 +1,50 @@
 package com.mustadio98.clockin.database;
 
-import java.util.Calendar;
-import java.util.Date;
-
-
-
 
 public class Clock {
 
-public Clock() {
+public Clock(String clockInDate, long clockIn, long clockOut) {
 		super();
-	}
-public Clock(long clockId, Date clockIn, Date clockOut) {
-		super();
-		this.clockId = clockId;
+		this.clockInDate = clockInDate;
 		this.clockIn = clockIn;
 		this.clockOut = clockOut;
 	}
-private long clockId;
-private Date clockIn;
-private Date clockOut;
-public long getClockId() {
-	return clockId;
-}
-public void setClockId(long clockId) {
-	this.clockId = clockId;
-}
-public Date getClockIn() {
+public Clock() {
+		super();
+	}
+
+private String clockInDate;
+private long clockIn;
+private long clockOut;
+
+public long getClockIn() {
 	return clockIn;
 }
-public void setClockIn(Date clockIn) {
+public void setClockIn(long clockIn) {
 	this.clockIn = clockIn;
 }
-public Date getClockOut() {
+public long getClockOut() {
 	return clockOut;
 }
-public void setClockOut(Date clockOut) {
+public void setClockOut(long clockOut) {
 	this.clockOut = clockOut;
 }
-public double getTotalTime(Date off, Date on){
-	Calendar calOff= Calendar.getInstance();
-	Calendar calOn = Calendar.getInstance();
-	calOff.setTime(off);
-	calOn.setTime(on);
-	long ms1=calOff.getTimeInMillis();
-	long ms2=calOn.getTimeInMillis();
+public double getTotalTime(){
+//	Calendar calOff= Calendar.getInstance();
+//	Calendar calOn = Calendar.getInstance();
+//	calOff.setTime(off);
+//	calOn.setTime(on);
+	long ms1=this.clockOut;
+	long ms2=this.clockIn;
 	long diff=ms1-ms2;
 	return diff;
 
 	
+}
+public String getClockInDate() {
+	return clockInDate;
+}
+public void setClockInDate(String clockInDate) {
+	this.clockInDate = clockInDate;
 }
 }
