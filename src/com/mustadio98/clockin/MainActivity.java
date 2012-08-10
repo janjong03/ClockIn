@@ -4,6 +4,7 @@ package com.mustadio98.clockin;
 
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -81,6 +82,7 @@ public class MainActivity extends Activity {
     		a.show();
     		return true;
     	case R.id.clockout:
+//    		DecimalFormat decimalFormat= new DecimalFormat("#.##");
     		if(clock.getClockOut()==0 && clock.getClockIn()!=0){
     		    DateFormat dateFormat=new SimpleDateFormat("HH:mm:ss");
         	    Calendar date = Calendar.getInstance();
