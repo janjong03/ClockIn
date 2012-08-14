@@ -15,6 +15,7 @@ private MySQLiteHelper mySQLiteHelper;
 private String[] allColumnsClock={MySQLiteHelper.CLOCKIN_ID, MySQLiteHelper.CLOCKIN_TIME, MySQLiteHelper.CLOCKOUT_TIME};
 private String[] allColumnsBreak={MySQLiteHelper.BREAKOUT_TIME, MySQLiteHelper.BREAKIN_TIME, MySQLiteHelper.CLOCKIN_ID};
 private String[] clockInStart={MySQLiteHelper.CLOCKIN_ID, MySQLiteHelper.CLOCKIN_TIME};
+private String[] getClockIn={MySQLiteHelper.CLOCKIN_TIME};
 
 public ClockIn(Context context){
 	mySQLiteHelper=new MySQLiteHelper(context);
@@ -44,7 +45,7 @@ public void close(){
 //	return clock;
 //	
 //}
-public void clockIn(String clockInDate, Date clockinTime){
+public void clockIn(String clockInDate, long clockinTime){
 	String sql=String.format("INSERT INTO clockin (clockInDate, clockinTime) values" +
 			"(%s,%d);",clockInDate,clockinTime);
 	try{
@@ -61,6 +62,12 @@ public void clockOut(Date clockoutTime){
 	}catch(SQLException e){
 		Log.e("Db Error", e.toString());
 	}
+}
+public long getClockin(String clockInDate){
+Cursor cursor=database.query("clockin", getClockIn, "clockInDate = "+clockInDate, null, null, null, null);
+cursor.moveToFirst();
+long clockIn=cursor.getLong(1);
+return clockIn;	
 }
 
 //public void addJob(int catId, String title, float lat, float lon){

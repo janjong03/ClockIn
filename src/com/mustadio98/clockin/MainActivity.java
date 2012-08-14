@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import com.mustadio98.clockin.database.Clock;
+import com.mustadio98.clockin.database.ClockIn;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	Clock clock=new Clock();
+	ClockIn clockIn=new ClockIn(getBaseContext());
 	TextView startText;
 	TextView endText;
 	TextView total;
@@ -36,11 +38,26 @@ public class MainActivity extends Activity {
         endText=(TextView)findViewById(R.id.txtEndTime);
         total=(TextView)findViewById(R.id.txtTotal);        
         
+        DateFormat dateFormat=new SimpleDateFormat("yyyy.MM.dd");
+	    Calendar date = Calendar.getInstance();
+		String today= dateFormat.format(date.getTime());	
+		clock.setClockInDate(today);
+        
+        
         final ActionBar actionBar=getActionBar();
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
-    
+    @Override
+    public void onPause(){    	
+    	clock.getClockIn();
+    	clockIn.clockIn(clock.getClockInDate(), clock.getClockIn());   	   	
+    }
+    @Override 
+    public void onResume(){
+
+    	
+    }
 
 
     @Override

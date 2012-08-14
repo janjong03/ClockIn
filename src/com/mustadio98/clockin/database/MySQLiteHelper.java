@@ -8,7 +8,7 @@ import android.util.Log;
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
 	public static final String CLOCKIN_NAME="clockin";
-	public static final String CLOCKIN_ID="clockinID";
+	public static final String CLOCKIN_ID="clockInDate";
 	public static final String CLOCKIN_TIME="clockinTime";
 	public static final String CLOCKOUT_TIME="clockoutTime";
 	
