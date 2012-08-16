@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/Background" >
 
     <ImageView
         android:id="@+id/imageView1"
@@ -15,7 +16,7 @@
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:scaleType="matrix"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo3" />
 
     <ImageButton
         android:id="@+id/startBtn"

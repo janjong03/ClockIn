@@ -18,7 +18,7 @@
         android:paddingBottom="50dp"
         android:paddingTop="50dp"
         android:scaleType="matrix"
-        android:src="@drawable/logo2" />
+        android:src="@drawable/logo3" />
 
     <ImageButton
         android:id="@+id/startBtn"

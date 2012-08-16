@@ -3,7 +3,8 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/Background" >
 
     <TextView
         android:id="@+id/textView1"
@@ -12,7 +13,8 @@
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:text="@string/start_time"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFF" />
 
     <TextView
         android:id="@+id/txtStartTime"
@@ -20,7 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:paddingTop="10dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        android:textColor="#FFF"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -29,7 +32,8 @@
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:text="@string/end_time"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:textColor="#FFF"/>
 
     <TextView
         android:id="@+id/txtEndTime"
@@ -37,7 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:paddingTop="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFF" />
 
     <TextView
         android:id="@+id/textView3"
@@ -46,7 +51,8 @@
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:text="@string/work_time"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:textColor="#FFF"/>
 
     <TextView
         android:id="@+id/txtTotal"
@@ -54,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:paddingTop="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFF" />
 
 </LinearLayout>
