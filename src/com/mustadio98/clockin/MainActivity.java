@@ -42,15 +42,16 @@ public class MainActivity extends Activity {
 	    Calendar date = Calendar.getInstance();
 		String today= dateFormat.format(date.getTime());	
 		clock.setClockInDate(today);
-		if(clock.getClockIn()==0){  
+		if(clock.getClockIn() == 0){  
     	    DateFormat dateFormat2=new SimpleDateFormat("HH:mm:ss");
     	    Calendar date2 = Calendar.getInstance();
     		String Time= dateFormat2.format(date2.getTime());		    		
     	    clock.setClockIn(date2.getTimeInMillis());
     		if(clock.getClockOut()!=0){
     			clock.setClockOut(0);
+    			startText.setText(Time);
     		}
-    		startText.setText(Time);
+    		
     		}  		
         final ActionBar actionBar=getActionBar();
         actionBar.setHomeButtonEnabled(true);
@@ -65,10 +66,10 @@ public class MainActivity extends Activity {
     @Override 
     public void onResume(){
     	super.onResume();
-    	Calendar date=Calendar.getInstance();
-    	date.setTimeInMillis(clock.getClockIn());
+//    	Calendar date=Calendar.getInstance();
+//    	date.setTimeInMillis(clock.getClockIn());
     	DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-    	startText.setText(String.valueOf(dateFormat.format(date.getTime())));
+    	startText.setText(String.valueOf(dateFormat.format(clock.getClockIn())));
     	if(clock.getClockOut()!=0){
     		endText.setText(String.valueOf(clock.getClockOut()));
     	}
