@@ -2,5 +2,7 @@
 <resources>
     <color name="Background">#5a23a5</color>
     <color name="Button_Shade">#236ea5</color>
+    <color name="Background2">#000000</color>
+    <color name="White">#FFFFFF</color>
     
 </resources>

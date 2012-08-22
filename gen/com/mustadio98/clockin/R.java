@@ -12,7 +12,9 @@ public final class R {
     }
     public static final class color {
         public static final int Background=0x7f040000;
+        public static final int Background2=0x7f040002;
         public static final int Button_Shade=0x7f040001;
+        public static final int White=0x7f040003;
     }
     public static final class drawable {
         public static final int breaks=0x7f020000;
@@ -34,9 +36,9 @@ public final class R {
         public static final int breakout=0x7f08000c;
         public static final int clock_in=0x7f08000a;
         public static final int clockout=0x7f08000b;
-        public static final int imageView1=0x7f080008;
+        public static final int imageView1=0x7f080009;
         public static final int menu_settings=0x7f08000d;
-        public static final int startBtn=0x7f080009;
+        public static final int startBtn=0x7f080008;
         public static final int textView1=0x7f080001;
         public static final int textView2=0x7f080003;
         public static final int textView3=0x7f080005;
@@ -60,6 +62,7 @@ public final class R {
         public static final int clock_out=0x7f050004;
         public static final int end_time=0x7f050008;
         public static final int menu_settings=0x7f050001;
+        public static final int start_desc=0x7f05000b;
         public static final int start_time=0x7f050007;
         public static final int title_activity_main=0x7f050002;
         public static final int work_time=0x7f050009;
