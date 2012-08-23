@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/break_value"
+        android:layout_marginTop="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <RadioButton
+        android:id="@+id/rbtn15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:checked="true"
+        android:text="15 Minutes"
+         android:layout_marginTop="30dp"
+        android:textSize="20dp" />
+	<RadioButton
+        android:id="@+id/rbtn30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:checked="false"
+        android:text="30 Minutes"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp" />
+	<RadioButton
+        android:id="@+id/rbtn60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:checked="false"
+        android:text="60 Minutes"
+         android:layout_marginTop="15dp"
+        android:textSize="20dp" />
+
+	<Button
+	    android:id="@+id/btnSubmit"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="30dp"
+	    android:layout_gravity="center"
+	    android:text="Submit" />
+
+</LinearLayout>

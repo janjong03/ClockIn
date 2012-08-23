@@ -111,8 +111,10 @@ public class MainActivity extends Activity {
 //    		a.show();
     		return true;
     	case R.id.breakout:
-    		Toast a=Toast.makeText(getApplicationContext(), "To Be Implemeted", Toast.LENGTH_SHORT);
-    		a.show();
+//    		Toast a=Toast.makeText(getApplicationContext(), "To Be Implemeted", Toast.LENGTH_SHORT);
+//    		a.show();
+    		i = new Intent(getBaseContext(), BreakOut.class);
+    		startActivity(i);
     		return true;
     	case R.id.clockout:
 //    		DecimalFormat decimalFormat= new DecimalFormat("#.##");

@@ -32,13 +32,17 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080000;
-        public static final int RelativeLayout1=0x7f080007;
-        public static final int breakout=0x7f08000c;
-        public static final int clock_in=0x7f08000a;
-        public static final int clockout=0x7f08000b;
-        public static final int imageView1=0x7f080009;
-        public static final int menu_settings=0x7f08000d;
-        public static final int startBtn=0x7f080008;
+        public static final int RelativeLayout1=0x7f08000b;
+        public static final int breakout=0x7f080010;
+        public static final int btnSubmit=0x7f08000a;
+        public static final int clock_in=0x7f08000e;
+        public static final int clockout=0x7f08000f;
+        public static final int imageView1=0x7f08000d;
+        public static final int menu_settings=0x7f080011;
+        public static final int rbtn15=0x7f080007;
+        public static final int rbtn30=0x7f080008;
+        public static final int rbtn60=0x7f080009;
+        public static final int startBtn=0x7f08000c;
         public static final int textView1=0x7f080001;
         public static final int textView2=0x7f080003;
         public static final int textView3=0x7f080005;
@@ -48,7 +52,8 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int start_layout=0x7f030001;
+        public static final int break_out=0x7f030001;
+        public static final int start_layout=0x7f030002;
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;
@@ -58,6 +63,7 @@ public final class R {
         public static final int break_in=0x7f050005;
         public static final int break_out=0x7f050006;
         public static final int break_time=0x7f05000a;
+        public static final int break_value=0x7f05000c;
         public static final int clock_in=0x7f050003;
         public static final int clock_out=0x7f050004;
         public static final int end_time=0x7f050008;

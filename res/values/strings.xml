@@ -12,5 +12,6 @@
     <string name="work_time">Total Work Time:</string>
     <string name="break_time">Total Break Time:</string>
     <string name="start_desc">Start Button</string>
+    <string name="break_value">Choose Your Break Time</string>
 
 </resources>
